@@ -93,14 +93,15 @@ tools like `nvm`, `fnm`, etc...
 
 **You are free to chose** any installation method you prefer!
 
-| Provider                           | Install                                                                                                                                                       |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [claude-code-acp][claude-code-acp] | `pnpm add -g @zed-industries/claude-code-acp`<br/> **OR** `npm i -g @zed-industries/claude-code-acp`<br/> **OR** [Download binary][claude-code-acp-releases]  |
-| [gemini-cli][gemini-cli]           | `pnpm add -g @google/gemini-cli`<br/> **OR** `npm i -g @google/gemini-cli`<br/> **OR** `brew install --cask gemini`                                           |
-| [codex-acp][codex-acp]             | `pnpm add -g @zed-industries/codex-acp`<br/> **OR** `npm i -g @zed-industries/codex-acp`<br/> **OR** [Download binary][codex-acp-releases]                    |
-| [opencode][opencode]               | `pnpm add -g opencode-ai`<br/> **OR** `npm i -g opencode-ai`<br/> **OR** `brew install opencode`<br/> **OR** `curl -fsSL https://opencode.ai/install \| bash` |
-| [cursor-agent][cursor-agent]       | `pnpm add -g @blowmage/cursor-agent-acp`<br/> **OR** `npm i -g @blowmage/cursor-agent-acp`                                                                    |
-| [auggie][auggie]                   | `pnpm add -g @augmentcode/auggie`<br/> **OR** `npm i -g @augmentcode/auggie`<br/> **OR** See [Auggie docs][auggie-docs]                                       |
+| Provider                           | Install                                                                                                                                                                    |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [claude-code-acp][claude-code-acp] | `pnpm add -g @zed-industries/claude-code-acp`<br/> **OR** `npm i -g @zed-industries/claude-code-acp`<br/> **OR** [Download binary][claude-code-acp-releases]               |
+| [gemini-cli][gemini-cli]           | `pnpm add -g @google/gemini-cli`<br/> **OR** `npm i -g @google/gemini-cli`<br/> **OR** `brew install --cask gemini`                                                        |
+| [codex-acp][codex-acp]             | `pnpm add -g @zed-industries/codex-acp`<br/> **OR** `npm i -g @zed-industries/codex-acp`<br/> **OR** [Download binary][codex-acp-releases]                                 |
+| [opencode][opencode]               | `pnpm add -g opencode-ai`<br/> **OR** `npm i -g opencode-ai`<br/> **OR** `brew install opencode`<br/> **OR** `curl -fsSL https://opencode.ai/install \| bash`              |
+| [copilot-cli][copilot-cli]         | `pnpm add -g @github/copilot`<br/> **OR** `npm i -g @github/copilot`<br/> **OR** `brew install copilot-cli`<br/> **OR** `curl -fsSL https://gh.io/copilot-install \| bash` |
+| [cursor-agent][cursor-agent]       | `pnpm add -g @blowmage/cursor-agent-acp`<br/> **OR** `npm i -g @blowmage/cursor-agent-acp`                                                                                 |
+| [auggie][auggie]                   | `pnpm add -g @augmentcode/auggie`<br/> **OR** `npm i -g @augmentcode/auggie`<br/> **OR** See [Auggie docs][auggie-docs]                                                    |
 
 > [!WARNING]  
 > These install commands are here for convenience, please always refer to the
@@ -122,7 +123,7 @@ tools like `nvm`, `fnm`, etc...
   "carlos-algms/agentic.nvim",
 
   opts = {
-    -- Available by default: "claude-acp" | "gemini-acp" | "codex-acp" | "opencode-acp" | "cursor-acp" | "auggie-acp"
+    -- Available by default: "claude-acp" | "gemini-acp" | "codex-acp" | "opencode-acp" | "cursor-acp" | "auggie-acp" | "copilot-acp"
     provider = "claude-acp", -- setting the name here is all you need to get started
   },
 
@@ -748,3 +749,4 @@ the the acknowledgments 😊.
 [cursor-agent]: https://github.com/blowmage/cursor-agent-acp-npm
 [auggie]: https://www.npmjs.com/package/@augmentcode/auggie
 [auggie-docs]: https://docs.augmentcode.com/cli/setup-auggie
+[copilot-cli]: https://github.com/github/copilot-cli

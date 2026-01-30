@@ -663,15 +663,16 @@ These providers spawn **external CLI tools** as subprocesses and communicate via
 the Agent Client Protocol:
 
 - **Requirements**: External CLI tools must be installed
-  - `npm i -g @zed-industries/claude-code-acp` or
+  - `pnpm add -g @zed-industries/claude-code-acp` or
     `brew install --cask claude-code` or
     `curl -fsSL https://claude.ai/install.sh | bash`
-  - `npm i -g @google/gemini-cli` or `brew install --cask gemini`
-  - `npm i -g @zed-industries/codex-acp` or `brew install --cask codex` or
+  - `pnpm add -g @google/gemini-cli` or `brew install --cask gemini`
+  - `pnpm add -g @zed-industries/codex-acp` or `brew install --cask codex` or
     download from releases
-  - `npm i -g opencode-ai` or `brew install opencode` or
+  - `pnpm add -g opencode-ai` or `brew install opencode` or
     `curl -fsSL https://opencode.ai/install | bash`
-  - `npm i -g @blowmage/cursor-agent-acp`
+  - `pnpm add -g @blowmage/cursor-agent-acp`
+  - `pnpm add -g @github/copilot` or `brew install copilot-cli`
 
 ##### Provider adapters:
 
@@ -683,6 +684,7 @@ Each provider has a dedicated adapter in `lua/agentic/acp/adapters/`:
 - `opencode_acp_adapter.lua` - OpenCode ACP adapter
 - `cursor_acp_adapter.lua` - Cursor Agent ACP adapter
 - `auggie_acp_adapter.lua` - Auggie ACP adapter
+- `copilot_acp_adapter.lua` - Copilot ACP adapter
 
 These adapters implement provider-specific message formatting, tool call
 handling, and protocol quirks.
@@ -771,3 +773,4 @@ https://raw.githubusercontent.com/neovim/neovim/refs/tags/v<version>/runtime/doc
 
 **Tip:** Do not assume a file contains what you need, use `rg`, or `grep` on the
 `runtime/doc` folder to find the file containing needed info.
+

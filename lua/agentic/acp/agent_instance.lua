@@ -66,6 +66,10 @@ function AgentInstance.get_instance(provider_name, on_ready)
         local AuggieACPAdapter =
             require("agentic.acp.adapters.auggie_acp_adapter")
         client = AuggieACPAdapter:new(config, on_ready)
+    elseif provider_name == "copilot-acp" then
+        local CopilotACPAdapter =
+            require("agentic.acp.adapters.copilot_acp_adapter")
+        client = CopilotACPAdapter:new(config, on_ready)
     else
         error("Unsupported ACP provider: " .. provider_name)
     end

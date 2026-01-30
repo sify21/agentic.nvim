@@ -75,7 +75,10 @@ function M.create_stdio_transport(config, callbacks)
         local args = vim.deepcopy(config.args or {})
         local env = config.env
 
-        local final_env = {}
+        local final_env = {
+            NODE_NO_WARNINGS = "1",
+            IS_AI_TERMINAL = "1",
+        }
 
         -- Essential environment variables for subprocess
         -- PATH: Required for finding executables
