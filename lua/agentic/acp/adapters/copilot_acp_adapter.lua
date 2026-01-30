@@ -89,6 +89,8 @@ function CopilotACPAdapter:_handle_tool_call(session_id, update)
                 old = vim.split(old_string, "\n"),
                 all = false, -- Copilot doesn't send replace_all info ??
             }
+        elseif not message.argument or message.argument == "" then
+            message.argument = update.title or update.rawInput.path or ""
         end
     elseif kind == "execute" then
         if update.rawInput.command ~= nil then

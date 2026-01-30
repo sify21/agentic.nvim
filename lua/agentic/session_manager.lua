@@ -574,6 +574,9 @@ function SessionManager:_show_diff_in_buffer(tool_call_id)
     local tracker = tool_call_id
         and self.message_writer.tool_call_blocks[tool_call_id]
 
+    -- FIXIT: Copilot is sending wrong tool call id in the permission request
+    -- instead of tying it to the edit tool call, it always send `write-permission`
+    -- https://github.com/github/copilot-cli/issues/989#issuecomment-3826381550
     if not tracker or tracker.kind ~= "edit" or tracker.diff == nil then
         return
     end
