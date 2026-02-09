@@ -382,6 +382,9 @@ function SessionManager:_handle_input_submit(input_text)
 
     local session_id = self.session_id
     local tab_page_id = self.tab_page_id
+    -- Capture chat_history before send to avoid race with _cancel_session
+    -- replacing self.chat_history while the callback is pending
+    local chat_history = self.chat_history
 
     self.is_generating = true
 
@@ -422,7 +425,7 @@ function SessionManager:_handle_input_submit(input_text)
 
             -- Save chat history after successful turn completion
             if not err then
-                self.chat_history:save(function(save_err)
+                chat_history:save(function(save_err)
                     if save_err then
                         Logger.debug("Chat history save error:", save_err)
                     end

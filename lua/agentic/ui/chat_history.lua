@@ -153,6 +153,14 @@ end
 
 --- @param callback fun(err: string|nil)|nil
 function ChatHistory:save(callback)
+    if not self.session_id then
+        Logger.notify("ChatHistory:save() skipped: no session_id")
+        if callback then
+            callback("No session_id set")
+        end
+        return
+    end
+
     local path = ChatHistory.get_file_path(self.session_id)
     local dir = vim.fn.fnamemodify(path, ":h")
 
