@@ -19,7 +19,7 @@ local AgentInstance = {}
 --- @type table<string, agentic.acp.ACPClient|nil>
 AgentInstance._instances = {}
 
---- @param provider_name string
+--- @param provider_name agentic.UserConfig.ProviderName
 --- @param on_ready fun(client: agentic.acp.ACPClient)
 function AgentInstance.get_instance(provider_name, on_ready)
     local client = AgentInstance._instances[provider_name]
@@ -46,6 +46,10 @@ function AgentInstance.get_instance(provider_name, on_ready)
         local ClaudeACPAdapter =
             require("agentic.acp.adapters.claude_acp_adapter")
         client = ClaudeACPAdapter:new(config, on_ready)
+    elseif provider_name == "claude-agent-acp" then
+        local ClaudeAgentACPAdapter =
+            require("agentic.acp.adapters.claude_agent_acp_adapter")
+        client = ClaudeAgentACPAdapter:new(config, on_ready)
     elseif provider_name == "codex-acp" then
         local CodexACPAdapter =
             require("agentic.acp.adapters.codex_acp_adapter")
